@@ -1,0 +1,1 @@
+#define glass 0

@@ -1,0 +1,1 @@
+#define crate 0
