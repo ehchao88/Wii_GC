@@ -69,6 +69,34 @@ int main(int argc, char **argv) {
 			printf("A pressed\n");
 		}
 
+		//Check if A is being held
+		u32 held = PAD_ButtonsHeld(0);
+		if (held & PAD_BUTTON_A){
+			printf("A held\n");
+		}
+
+		//Indicate A was released
+		u32 buttonUp = PAD_ButtonsUp(0);
+		if(buttonUp & PAD_BUTTON_A){
+			printf("A released\n");
+		}
+
+		if(PAD_StickY(0) > 18){
+			printf("Joystick moved up\n");
+		}
+
+		if(PAD_StickY(0) < -18){
+			printf("Joystick moved down\n");
+		}
+
+		if(PAD_StickX(0) > 18){
+			printf("Joystick moved right\n");
+		}
+
+		if(PAD_StickX(0) < -18){
+			printf("Joystick moved left\n");
+		}
+
 		//Exit program when start button pressed
 		if ( pressed & PAD_BUTTON_START ) exit(0);
 
